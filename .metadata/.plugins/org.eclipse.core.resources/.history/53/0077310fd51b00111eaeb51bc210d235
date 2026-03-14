@@ -1,0 +1,25 @@
+package x01_CoderPadCommonQuestion;
+
+import java.util.Arrays;
+
+public class PracticeBeast { 
+	 
+	 
+	 
+	public static void main(String[] args) {
+		 
+//        IP :- 	{3,9}
+//	{2,7}
+//	OP :- 13,21
+	
+	
+	int[] arr0 = {3,9};
+	int[] arr1 = {2,7};
+	
+	
+	System.out.println(Arrays.toString(addFract(arr0,arr1)));
+	
+	
+}
+
+}

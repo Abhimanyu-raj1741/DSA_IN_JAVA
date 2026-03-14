@@ -1,0 +1,35 @@
+package Arrays;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class PracticeBeast {
+  
+	public static void main(String[] args) {
+     
+		int[] arr = {1,6,10,15,18,4,0};
+  	       
+	     int secLarg =-1;
+	     int larg=arr[0];
+	     
+	     for(int i=1;i<arr.length;i++) {
+	    	     if(arr[i]>larg) {
+	    	    	 secLarg = larg;
+	    	    	 larg =arr[i];
+	    	    	 
+	    	     }
+	    	    	  
+	    	     
+	    	     else if(arr[i]>larg && arr[i]>secLarg) {
+	    	    	      secLarg =arr[i];
+	    	     }
+	     }
+		 System.out.println(secLarg);
+		
+		
+		 
+		
+	}
+}

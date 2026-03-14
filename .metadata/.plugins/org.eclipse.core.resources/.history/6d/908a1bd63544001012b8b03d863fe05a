@@ -1,0 +1,20 @@
+package MultiThreadingBasics;
+
+public class ThreadExample extends Thread {
+	// How to create a Thread 
+	// 1. By Extending Thread Class 
+	
+	public void run() {
+		System.out.println(" Inside Method Run ");
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		
+		ThreadExample t1 = new ThredExample();
+		t1.start();
+		
+	}
+
+}

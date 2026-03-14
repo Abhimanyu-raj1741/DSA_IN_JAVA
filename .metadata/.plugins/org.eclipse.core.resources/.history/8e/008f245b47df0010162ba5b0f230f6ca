@@ -1,0 +1,57 @@
+package com.practice;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class x14_Practice {
+	
+ public static void main(String[] args) {
+	
+	 List<Integer> ls = Arrays.asList(12,2,3,4,6,11,13,1);
+	 
+	 Map<Boolean, List<Integer>> collect = ls.stream().collect(Collectors.partitioningBy(i->i%2==0));
+	 
+	 
+	 for(Map.Entry<Boolean, List<Integer>>  entry : collect.entrySet()) {
+		 
+		 if(entry.equals(0)) {
+			 System.out.println(" Odd Numbers ");
+			 System.out.println( " " + entry.getValue());
+			 
+		 }
+		 else {
+			 System.out.println(" Even Numbers ");
+			 System.out.println(" " + entry.getValue());
+		 }
+	 }
+	 System.out.println("-----------------------");
+	 List<Integer> rs = Arrays.asList(2,2,3,4,6,11,3,1);
+	             rs.stream().distinct().forEach(System.out::println);
+	             
+	             
+	             String str = "Abhimanyu Kumar";
+	             String str1 = str.toLowerCase();
+	             
+	             Map<Character, Long> collect2 = str1.chars().mapToObj(c->(char)c).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+	             
+	             for(Map.Entry<Character, Long> entry1  : collect2.entrySet()) {
+	            	 
+	            	 System.out.println("-------------------------");
+	            	 
+	            	 System.out.println(entry1.getKey() + "  " + entry1.getValue());
+	            	 
+	            	 List<Integer> rr = rs.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+	            	 
+	            	 for(Integer i : rr) {
+	            		 System.out.println(i);
+	            	 }
+	            	 
+	            	 
+	            	 
+	             }
+}
+}

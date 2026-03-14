@@ -1,0 +1,53 @@
+package com.practice;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class x01_OddAndEven {
+
+	public static void main(String[] args) {
+
+		List<Integer> ls  = Arrays.asList(2,13,4,1,11,17,8);
+        
+		Map<Boolean,List<Integer>> collect = ls.stream().collect(Collectors.partitioningBy(i->i%2==0));
+		
+		// using trinary operator
+		collect.forEach((k, v) -> {
+		    System.out.println(k ? "Even Number" : "Odd Number");
+		    v.forEach(System.out::println);
+		});
+         
+		// using set 
+		Set<Entry<Boolean,List<Integer>>> st = collect.entrySet();
+		
+		for(Map.Entry<Boolean,List<Integer>> entry : st) {
+			if(entry.getKey()) {
+				System.out.println("Even Number");
+				
+			}
+			else {
+				System.out.println("Odd Number");
+			}
+			List<Integer> l = entry.getValue();
+			for(int i : l) {
+				System.out.println(i);
+			}
+			
+		}
+		
+	  System.out.println("---------using Trinary-------------"); 
+		collect.forEach((k,v)->{
+			System.out.println(k?"Even Number":"Odd Number");
+			v.forEach(System.out::println);
+		});
+		
+  
+		   
+
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;CoderPadCommonQuestion&apos; to &apos;x01_CoderPadCommonQuestion&apos;&#x0D;&#x0A;- Original project: &apos;x18_GoldManSachDSA&apos;&#x0D;&#x0A;- Original element: &apos;x18_GoldManSachDSA/src/CoderPadCommonQuestion&apos;&#x0D;&#x0A;- Renamed element: &apos;x18_GoldManSachDSA/src/x01_CoderPadCommonQuestion&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;CoderPadCommonQuestion&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;CoderPadCommonQuestion" name="x01_CoderPadCommonQuestion" qualified="false" references="true" stamp="1771249933221" textual="false" version="1.0"/>
+</session>

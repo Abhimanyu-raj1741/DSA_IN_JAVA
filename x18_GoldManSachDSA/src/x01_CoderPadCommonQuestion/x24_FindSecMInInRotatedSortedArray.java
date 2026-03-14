@@ -1,0 +1,43 @@
+package x01_CoderPadCommonQuestion;
+
+public class x24_FindSecMInInRotatedSortedArray { 
+	
+	public static void main(String[] args) {
+		  int[] arr = {5,6,2,3,4};
+		  
+		  int secondMin = findSecondMin(arr);
+		  System.out.println(secondMin);
+	}
+	public static int findSecondMin(int[] arr) {
+		 
+		  int MinIndex = findMinIndex(arr);
+		  int n = arr.length;
+		  int result =0;
+		  if(MinIndex ==n-1) {
+			   result = arr[0];
+		  }
+		  else {
+			   result = arr[MinIndex+1];
+		  }
+		  return result;
+	}
+	
+	public static int findMinIndex(int[] arr) {
+		   int low =0;
+		   int high = arr.length-1;
+		  while(low<high) {
+			    int mid  = low+(high-low)/2;
+			    if(arr[mid]>arr[high]) {
+			    	    low=mid+1;
+			    }
+			    else {
+			    	    high=mid;
+			    }
+			    
+		  }
+		  return low ; 
+		   
+		
+	}
+
+}

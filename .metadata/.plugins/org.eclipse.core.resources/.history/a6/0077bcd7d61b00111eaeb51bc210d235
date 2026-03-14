@@ -1,0 +1,54 @@
+package x01_CoderPadCommonQuestion;
+
+import java.util.Arrays;
+
+public class PracticeBeast { 
+	
+	 public static int  findGcd(int a,int b) {
+		   
+		    if(b==0)
+		    	 return a; 
+		    else {
+		    	  return findGcd(b,a%b);
+		    }
+		 
+	 }
+	
+	public static void addFract(int[] arr0,int[] arr1) {
+		
+		
+	 int num1 = arr0[0];
+	 int num2= arr1[0];
+	 
+	 int num = (num1*arr1[1] + num2*arr0[1]);
+		
+	 int deno = arr0[1]*arr1[1];
+	 
+	 int gcd = findGcd(arr0[1],arr1[1]);
+	 
+	 int newNum = num/gcd;
+	 int newDeno = deno/gcd; 
+	 
+	 System.out.println( newNum + "/"+ newDeno);
+		
+	}
+	
+	 
+	 
+	public static void main(String[] args) {
+		 
+//        IP :- 	{3,9}
+//	{2,7}
+//	OP :- 13,21
+	
+	
+	int[] arr0 = {3,9};
+	int[] arr1 = {2,7};
+	
+	
+	addFract(arr0,arr1);
+	
+	
+}
+
+}

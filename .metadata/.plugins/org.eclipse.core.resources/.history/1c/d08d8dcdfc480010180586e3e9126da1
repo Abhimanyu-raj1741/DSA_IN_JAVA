@@ -1,0 +1,43 @@
+package Arrays;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class PracticeBeast {
+  
+	public static void main(String[] args) {
+		  
+	 List<Integer> ls = Arrays.asList(-6, -3, -1, 2, 4, 5);
+	 int index =0;
+	 for(Integer s: ls) {
+		 ls.set(index, s*s);
+		 index++;
+	 }
+	 int[] arr = {-6,-3,-1,2,4,5};
+	//  Collections.sort(ls);
+	 int head=0;
+	 int tail=ls.size()-1;
+	 int n=arr.length;
+	 
+	 for(int i=0;i<n;i++)arr[i]=arr[i]*arr[i];
+	 int[] arr1 = new int[n];
+        for(int pos=n-1;pos>=0;pos--){
+		  
+		 if(arr[head]>arr[tail]) {
+			 arr1[pos]=arr[head];
+			 head++;
+		 }
+		 else
+			 arr1[pos]=arr[tail];
+		     tail--;
+		 
+	 }
+	 
+	 for(Integer l : ls) {
+		 
+		  System.out.println(l);
+	 }
+		
+	}
+}

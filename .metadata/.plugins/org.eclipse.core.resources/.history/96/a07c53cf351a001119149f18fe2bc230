@@ -1,0 +1,39 @@
+package Arrays;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class PracticeBeast {
+  
+	public static void main(String[] args) {
+     
+		 int[] A = {5, 9,-2, 3 , 1, 2};
+  	       int b = 3;
+	      
+  	       int b2 = b;
+  	       int sum =0 ;
+  	       int i=0; 
+  	       int j=A.length-1;
+  	       while(b!=0) {
+  	    	      sum +=A[i++];
+  	    	   b--;
+  	       }
+  	       int ans = sum ;
+  	       
+  	       while(b2!=0) {
+  	    	    sum -= A[--i];
+  	    	    sum += A[j--];
+  	    	    ans = Math.max(ans,sum);
+  	    	   b2--;
+  	       }
+  	       
+	    
+		
+		
+		
+		System.out.println(ans);
+		
+	}
+}

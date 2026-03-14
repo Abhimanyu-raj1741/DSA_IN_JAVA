@@ -1,0 +1,28 @@
+package x01_CoderPadCommonQuestion;
+
+public class x08_PoweOf10 { 
+	
+	public static boolean check(long num) {
+		
+		if(num==1) return true;
+		else if(num<10) return false ;
+		else if(num%10==0) { 
+			 
+			return check(num/10);
+		}
+		else 
+			return false ;
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		 long nums =10000000;
+		if(check(nums))System.out.println("Power of 10");
+		else {
+			System.out.println("Not power of 10");
+		}
+		 
+	}
+
+}

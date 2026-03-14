@@ -1,0 +1,108 @@
+package x01_CoderPadCommonQuestion;
+
+public class x05_TrappintRainWater {
+	
+	
+	
+	public static int bruteForceWater(int[] height) {
+		// Time Complexity  = O(N2)
+		int n = height.length;
+		int water =0;
+		
+		for(int i =0;i<n;i++) {
+			int leftMax=0;
+			int rightMax=0;
+			
+			for(int j=0;j<=i;j++) {
+				 leftMax = Math.max(leftMax, height[j]);
+			}
+			for(int k=i;k<n;k++) {
+				rightMax= Math.max(rightMax, height[k]);
+			}
+			
+			water+= Math.min(leftMax, rightMax)-height[i];
+			
+		}
+		
+		
+		return water ;
+	}
+	
+	public static int BetterApproach(int[] height) {
+		int n = height.length;
+		
+		int[] prefixMax = new int[n];
+		int[] suffixMax = new int[n]; 
+		
+	
+		 prefixMax[0]= height[0];
+		for(int i=1;i<n ;i++) {
+			 prefixMax[i] = Math.max(prefixMax[i-1], height[i]);
+		}
+		 
+		suffixMax[n-1]=height[n-1];
+		for(int i=n-2;i>=0;i--) {
+			suffixMax[i] =Math.max(suffixMax[i+1], height[i]);
+		}
+	      
+		
+		int water =0; 
+		for(int i =0;i<n;i++) {
+			  water += Math.min(prefixMax[i], suffixMax[i]) - height[i] ;
+		}
+		
+		
+		return water ;
+	}
+	public static  int OptimalApproach(int[] height) {
+		
+		int left =0 ;
+		int right = height.length-1;
+		int leftMax = height[left];
+		int rightMax = height[right];
+		int n = height.length;
+		int water =0; 
+		while(left<right) {
+			
+			  if( height[left]<height[right]) {
+				    
+				   if(height[left]>=leftMax) {
+					    leftMax =  height[left];
+				   }
+				   else {
+					   water += leftMax-height[left];
+				   }
+				   left++ ;
+			  }
+			  else {
+				  if(height[right]>=rightMax) {
+					    rightMax =  height[right];
+				   }
+				   else {
+					   water += rightMax-height[right];
+				   }
+				   right-- ;
+			  }
+			
+		}
+		
+		
+		
+		return water;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+//		Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+//				Output: 6
+		
+		int[] height = {0,1,0,2,1,0,1,3,2,1,2,1};
+		 
+		  System.out.println(bruteForceWater(height));
+			 
+		 System.out.println(BetterApproach(height));
+		 System.out.println(OptimalApproach(height));
+	}
+
+}

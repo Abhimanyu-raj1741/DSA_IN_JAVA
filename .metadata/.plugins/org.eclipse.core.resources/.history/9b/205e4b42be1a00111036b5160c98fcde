@@ -1,0 +1,39 @@
+package com.practice;
+
+import java.util.Stack;
+
+public class PracticeBeast { 
+	public static void main(String[] args) {
+		
+		String str = "(())))";
+		
+		
+		if(checkValid(str)) {
+			System.out.println("Valid Paranthesis");
+		}
+		else {
+			System.out.println("Invalid ");
+		}
+		
+		
+	}
+	public static boolean checkValid(String str) {
+		
+Stack<Character> st = new Stack<>();
+		
+		for(Character c : str.toCharArray()) {
+			
+			if(c=='(') {
+				st.push(c);
+			}
+			if(c==')') {
+				if(st.isEmpty())return false;
+				st.pop();
+			}
+			
+			
+		}
+		return st.isEmpty();
+	}
+
+}

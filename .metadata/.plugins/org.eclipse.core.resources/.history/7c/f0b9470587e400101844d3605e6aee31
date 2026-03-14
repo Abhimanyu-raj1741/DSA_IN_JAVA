@@ -1,0 +1,28 @@
+package com.practice;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class x05_FrequencyCoutChar {
+      public static void main(String[] args) {
+		   
+    	  String str = "Abhimanyu Kumar   ";
+    	  str.trim();
+    	  String st =str.toLowerCase().trim();
+    	  
+    	  HashMap<Character,Integer> hp = new HashMap<>();
+    	  
+    	  for(Character c : st.toCharArray()) {
+    		  if(c.equals(""))continue;
+    		  
+    		   hp.put(c,hp.getOrDefault(c, 0)+1);
+    	  }
+    	 for(Map.Entry<Character,Integer>  entry:hp.entrySet())	{
+    		// System.out.println(entry.getKey() + "  "+ entry.getValue());
+    		 int key = entry.getKey();
+    		 if(entry.getValue()==1) {
+    			 System.out.println(entry.getKey());
+    		 }
+    	 }
+	}
+}

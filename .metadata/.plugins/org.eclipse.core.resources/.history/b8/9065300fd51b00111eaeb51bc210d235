@@ -1,0 +1,62 @@
+package x01_CoderPadCommonQuestion;
+
+import java.util.Arrays;
+
+public class x01_AddTwoFractions {
+	
+	public static int findGCD(int a,int b) {
+//		a = Math.abs(a);
+//        b = Math.abs(b);
+		 while(b!=0) {
+			 int temp =b;
+			 b =a%b;
+			  a=temp;
+			 
+		 }
+		 
+		 return a ;
+		 
+	
+	}
+	
+	public static int[] addFract(int[] arr0,int[] arr1) {
+		
+		int num;
+		int deno;
+		
+		if(arr0[1]==arr1[1]) {
+			num=arr0[0]+arr1[0];
+			deno=arr1[1];
+		}else {
+			
+			num= arr0[0]*arr1[1]+arr1[0]*arr0[1];
+			deno = arr0[1]*arr1[1];
+			
+			int gcd = findGCD(num,deno);
+			
+			num/=gcd;
+			deno/=gcd;
+			
+		}
+		int[] arr = {num,deno};
+		
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		 
+//	        IP :- 	{3,9}
+//		{2,7}
+//		OP :- 13,21
+		
+		
+		int[] arr0 = {3,9};
+		int[] arr1 = {2,7};
+		
+		
+		System.out.println(Arrays.toString(addFract(arr0,arr1)));
+		
+		
+	}
+
+}

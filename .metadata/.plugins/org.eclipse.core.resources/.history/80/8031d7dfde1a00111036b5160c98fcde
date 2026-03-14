@@ -1,0 +1,26 @@
+package com.practice;
+
+public class x02_MiddleOfLinkedList {
+	
+      class Node {
+		  int data ;
+		  Node next;
+		  
+		  Node(int data){
+			  this.data = data;
+			  this.next =null;
+		  }
+		  
+		 
+	}
+	Node head;
+	public static void main(String[] args) {
+		 Node head = new Node(10);
+		 Node second = new Node(10);
+		 Node third = new Node(10);
+		 Node fourth = new Node(10);
+		 Node fift = new Node(10);
+		 
+	}
+
+}

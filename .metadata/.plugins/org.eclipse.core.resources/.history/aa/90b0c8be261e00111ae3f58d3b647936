@@ -1,0 +1,39 @@
+package x01_CoderPadCommonQuestion;
+
+import java.util.HashSet;
+
+public class x23_DetectCycleInArray {
+                      
+	public static void main(String[] args) {
+		  int[] arr = {1,2,1,2,1,1};
+		  
+		  boolean res = checkCycle(arr);
+		  
+		  System.out.println(res);
+		  
+	}
+	
+	public static boolean checkCycle(int[] arr) {
+		   
+		  int n = arr.length;
+		  
+		  int index =0;
+		  
+		  HashSet<Integer> visited = new HashSet<>();
+				  
+		  while(index<n) {
+			    
+			  if(visited.contains(index)) {
+				   return false;
+			  }
+			  visited.add(index);
+			  index=arr[index];
+			  if(index>=n) {
+				  return false;
+			  }
+		  }
+		  return false;
+		
+		
+	}
+}

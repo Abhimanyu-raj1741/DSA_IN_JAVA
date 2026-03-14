@@ -1,0 +1,50 @@
+package Arrays;
+
+public class x20_MaximumSubArraySumKadane {
+	
+	public static void main(String[] args) {
+		
+		int[] arr = {-2,-3,4,-1,-2,1,5,-3};
+		
+		int maxSum=0;
+		
+		//  Brute Force  will take O(n3)  this is better O(n2) 
+		for(int i=0;i<arr.length;i++) {
+			  int sum=0;
+			for(int j=i;j<arr.length;j++) {
+				sum+=arr[j];
+				maxSum=Math.max(maxSum,sum);
+			}
+		}
+		
+		System.out.println(maxSum);
+		
+		// Optimal Kadane's Algorithm O(n) 
+		int max=Integer.MIN_VALUE;
+		int sum=0;
+		int start =0;
+		int end=0;
+		for(int i=0;i<arr.length;i++) {
+			if(sum==0)start=i;
+			
+			sum+=arr[i];
+			
+			if(sum>max) {
+				
+				max = Math.max(sum,max);
+				end=i;
+			}
+			if(sum<0)
+			{
+				sum=0;
+				
+			}
+				
+		}
+		System.out.println(max);
+		for(int i=start;i<end;i++) {
+			System.out.print(arr[i]+ " ");
+		}
+	}
+
+}

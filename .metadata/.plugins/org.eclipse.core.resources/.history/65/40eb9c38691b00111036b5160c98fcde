@@ -1,0 +1,37 @@
+package x01_CoderPadCommonQuestion;
+
+import java.util.Stack;
+
+public class x11_Pangram {
+	
+	
+	public static void  checkPangram(String s) {
+		 
+		Stack<Character> st = new Stack<>();
+		s.toLowerCase();
+		
+		for(Character  c : s.toCharArray()) {
+			 if(c>='a' && c<='z') {
+				  st.add(c);
+			 }
+		}
+		if(st.size()==26) {
+			System.out.println("String is Panagram");
+		}
+		else {
+		  System.out.println("String is not panagram");
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		         String str = "thequickbrownfoxjumpsoverthelazydog";
+		         
+		         checkPangram(str);
+		         
+		         
+		         
+	}
+
+}

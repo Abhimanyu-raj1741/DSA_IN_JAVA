@@ -1,0 +1,38 @@
+package x01_CoderPadCommonQuestion;
+
+public class x09_LongestUniformSubstring { 
+	
+	public static void main(String[] args) {
+		// TC: O(n)
+
+		        String s = "aabbcccccccc";
+		        int[] result = findLongestSegment(s);
+		        for(int i =0;i<result[1];i++) {
+		        	   System.out.print(s.charAt(i+result[0]));
+		        }
+		        
+		        System.out.println("[" + result[0] + ", " + result[1] + "]");
+		}
+    public static int[] findLongestSegment(String s) {
+    	
+        int n = s.length();
+        if (n == 0) return new int[]{-1, 0};
+
+        int left = 0, right = 0;
+        int[] ans = new int[]{0, 1};
+
+        while (right < n) {
+            while (right < n && s.charAt(right) == s.charAt(left)) {
+                right++;
+            }
+            int len = right - left;   // fixed off-by-one
+            if(len > ans[1]) {
+                ans[1] = right - left; 
+                ans[0] = left;
+            }
+            left = right;
+        }
+        return ans;
+    }
+	}
+

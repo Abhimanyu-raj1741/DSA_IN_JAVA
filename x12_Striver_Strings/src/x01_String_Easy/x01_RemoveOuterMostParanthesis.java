@@ -1,0 +1,25 @@
+package x01_String_Easy;
+
+public class x01_RemoveOuterMostParanthesis {
+
+	public static void main(String[] args) {
+//		
+//		Input: s = "(()())(())"
+//				Output: "()()()"
+		 
+		String str = "(()())(())";
+		
+		StringBuilder s = new StringBuilder();
+		
+		int opened =0;
+		
+		for(char c :str.toCharArray()) {
+			if(c=='(' && opened++ >0)s.append(c);
+			if(c==')' && opened-->1)s.append(c);
+			
+			
+		}
+		
+		System.out.println(s);
+	}
+}

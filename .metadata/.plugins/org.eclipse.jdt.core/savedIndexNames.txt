@@ -1,0 +1,18 @@
+INDEX VERSION 1.134+D:\DSA Practice In JAVA\.metadata\.plugins\org.eclipse.jdt.core
+4004621496.index
+1801861700.index
+2519567421.index
+1946626005.index
+2918828286.index
+506056351.index
+1841796909.index
+128560410.index
+1865797976.index
+2590948951.index
+4057035819.index
+4271582503.index
+22632204.index
+3645713368.index
+132117103.index
+1864905623.index
+1085447711.index

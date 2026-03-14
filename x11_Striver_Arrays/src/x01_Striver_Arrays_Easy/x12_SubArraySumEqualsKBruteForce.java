@@ -1,0 +1,33 @@
+package x01_Striver_Arrays_Easy;
+
+public class x12_SubArraySumEqualsKBruteForce {
+   
+       public static void main(String[] args) {
+		  
+//    	   Input: nums = [10, 5, 2, 7, 1, 9],  k=15
+//
+//    			   Output: 4
+    	          
+    	  int[] arr = {10, 5, 2, 7, 1, 9};
+    	     // op = 4
+    	     //int[] arr = {-3, 2, 1};
+    	     
+    	     int target =15;
+    	     int n =arr.length;
+    	     int maxLength=0;
+    	     for(int i=0;i<n;i++) {
+    	    	         int sum=0;
+    	    	       for(int j=i;j<n;j++)  {
+    	    	    	         sum+=arr[j];
+    	    	    	         if(sum==target) {
+       	    	        	      maxLength=Math.max(maxLength, j-i+1);
+       	    	        }
+    	    	       }
+    	     
+    	     }
+    	     System.out.println(maxLength);
+    	   
+    	   
+    	   
+	}
+}

@@ -1,0 +1,16 @@
+package com.practice;
+
+public class x02_InfosysQuestion {
+      
+	 public static void main(String[] args) {
+		 // Print the first letter of each word in sentence 
+		 
+		 String str = "My name is Abhimanyu Kumar ";
+		 
+		 String[] split = str.split(" ");
+		 
+		 for(String s : split) {
+			  System.out.println(s.charAt(0));
+		 }
+	}
+}

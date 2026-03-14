@@ -1,0 +1,21 @@
+package x01_CoderPadCommonQuestion;
+
+public class x13_PowerFromBaseAndExponent {
+	
+	
+	public static void main(String[] args) {
+		  
+		int input1=2;
+		int input2=-1;
+		
+		int res=1;
+		for(int i =0;i<Math.abs(input2);i++) {
+			res = res*input1;
+		}
+		if(input2<0) {
+			res=1/res;
+		}
+		System.out.println(res);
+	}
+
+}

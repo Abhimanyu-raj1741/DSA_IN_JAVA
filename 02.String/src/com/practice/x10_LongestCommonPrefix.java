@@ -1,0 +1,32 @@
+package com.practice;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class x10_LongestCommonPrefix {
+	
+	  public static  String longestCommonPrefix(String[] strs) {
+	       
+	       StringBuilder sb = new StringBuilder();
+	      ;
+	       Arrays.sort(strs);
+	      String s =  strs[0];
+	      String r = strs[strs.length-1];
+	       for(int i=0;i<s.length();i++){
+	           if(s.charAt(i)==r.charAt(i))
+	            {
+	                sb.append(s.charAt(i));
+	            }
+	            else break;
+	       }
+	       return sb.toString();
+
+	        
+	    }
+             
+	public static void main(String[] args) {
+		 String[] str = {"flower","flow","floight"};
+		 System.out.println(longestCommonPrefix(str));
+	}
+}

@@ -1,0 +1,110 @@
+package x01_CoderPadCommonQuestion;
+
+public class x06_DequeuImpl {
+	 int[] arr;
+	 int front ;
+	 int rear ;
+	 int capacity;
+	 int count;
+	    
+	     public x06_DequeuImpl(int size) {
+	    	    capacity = size;
+	    	   arr = new int[capacity];
+	    	    front=-1;
+	    	    rear =-1; 
+	    	    count =0;
+	     }
+	     public void insertRear(int data) {
+	    	 
+	    	   if(count ==capacity ) {
+	    		    System.out.println("Size is full ");
+	    		    return ;
+	    	   }
+	    	   
+	    	     if(count==0) {
+	    	    	   front=0;
+	    	    	   rear=0;
+	    	     } 
+	    	     else {
+	    	    	  rear = (rear+1) % capacity;
+	    	     }
+	    	     arr[rear] = data ;
+	    	     count++;
+	    	     
+	     }
+	     public void insertFront(int data) {
+	    	      if(count == capacity) {
+	    	    	   System.out.println( " Size is full");
+	    	    	   return ;
+	    	      }
+	    	      if(count==0) {
+	    	    	   front =0;
+	    	    	   rear =0;
+	    	      }
+	    	      else {
+	    	    	      front = (front-1+capacity)%capacity;
+	    	      }
+	    	      arr[front] =data;
+	    	      count++;
+	    	      
+	     }
+	     public  void deleteFront() {
+	    	         if(count ==0) {
+	    	        	  System.out.println("Deque is Empty");
+	    	        	  return ;
+	    	         }
+	    	         
+	    	         if(count==1) {
+	    	        	      front =-1;
+	    	        	      rear=-1;
+	    	         }
+	    	         else {
+	    	        	   front = (front+1)%capacity;
+	    	         }
+	    	         count--;
+	     }
+	     public void deleteRear() {
+	    	     
+	    	     if(count==0) {
+	    	    	        System.out.println( "Deque is Empty");
+	    	    	        return ;
+	    	     }
+	    	     if(count ==1) {
+	    	    	  rear =-1;
+	    	    	  front =-1;
+	    	     }
+	    	     else {
+	    	    	    rear = (rear-1+capacity)%capacity;
+	    	     }
+	    	     count--;
+	    	     
+	     }
+	     public void display() {
+	    	 if (count == 0) {
+		            System.out.println("Deque is empty");
+		            return;
+		        }
+	    	   
+	    	   for(int i =0 ;i<count;i++) {
+	    		    int index =( front+i )%capacity;
+	    		    System.out.print(arr[index] + " ");
+	    	   }
+	    	    
+	     }
+	     
+	     
+	     
+	     public static void main(String[] args) {
+			x06_DequeuImpl deque = new x06_DequeuImpl(5);
+			deque.insertFront(1);
+			deque.insertFront(2);
+			deque.insertFront(3);
+			deque.display();
+			deque.insertFront(4);
+			deque.insertFront(5);
+	    	 
+	    	    
+		}
+	
+
+}

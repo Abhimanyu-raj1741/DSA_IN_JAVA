@@ -1,0 +1,8 @@
+package x01_CoderPadCommonQuestion;
+
+public class x12_PascalsTriangle {
+	public static void main(String[] args) {
+		 
+	}
+
+}

@@ -1,0 +1,75 @@
+package x01_Striver_Arrays_Easy;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class x08_UnionOFTwoSortedArray {
+  public static void main(String[] args) {
+	     
+//	  Input: nums1 = [1, 2, 3, 4, 5], 
+//               nums2 = [1, 2, 7]
+//			  Output: [1, 2, 3, 4, 5, 7]
+	  
+//	  List<Integer> arr1 = Arrays.asList(1, 2, 3, 4, 5);
+//	  List<Integer> arr2 = Arrays.asList(1, 2, 7);
+//	  
+//	  // Brute force 
+//	  Set<Integer> st = new HashSet<>();
+//	  
+//	  for (Integer i : arr1 ) st.add(i);
+//	  for (Integer a : arr2)st.add(a);
+//	  
+//	  System.out.println(st);
+	  
+	  // Optimal 
+	  int[] arr1 = {1, 2, 3, 4, 5};
+	  int[] arr2 ={1, 2, 7};
+	  
+	  List<Integer> a1 = new ArrayList<>();
+	  
+	  int i =0;
+	  int j =0;
+	  int n = arr1.length;
+	  int m = arr2.length;
+	  
+	  while(i<n && j<m) {
+		  // 1st Condition 
+		    if(arr1[i]==arr2[j]) {
+		    	  if(a1.isEmpty() || a1.get(a1.size()-1)!=arr1[i])
+		    		  a1.add(arr1[i]);
+		    	  i++;
+		    	  j++;
+		    
+		    }
+		    //  2nd condition
+		    else if(arr1[i]<arr2[j]) {
+		    	 if(a1.isEmpty() || a1.get(a1.size()-1)!=arr1[i])
+		    		 a1.add(arr1[i]);
+		    	    i++;
+		    }
+		    // 3rd condition
+		    else {
+		    	   if(a1.isEmpty()||a1.get(a1.size()-1)!=arr2[j])
+		    		   a1.add(arr2[j]);
+		    	   j++;
+		    }
+	  }
+	  while(i<n) {
+		  if(a1.isEmpty() || a1.get(a1.size()-1)!=arr1[i])
+			  a1.add(arr1[i]);
+		  i++;
+	  }
+	  while(j<m) {
+		  if(a1.isEmpty() || a1.get(a1.size()-1)!=arr2[j])
+			  a1.add(arr2[j]);
+		  j++;
+	  }
+	  
+	  System.out.println(a1);
+	   
+}
+	
+}

@@ -1,0 +1,131 @@
+package x01_Learning;
+
+public class x07_ImplementDequeue {
+	    int[] arr;
+	    int capacity;
+	    int front;
+	    int rear;
+	    int count;
+
+	     public x07_ImplementDequeue(int size) {
+			// TODO Auto-generated constructor stub
+		
+	        capacity = size;
+	        arr = new int[capacity];
+	        front = -1;
+	        rear = -1;
+	        count = 0;
+	    }
+
+	    // Insert at rear
+	    void insertRear(int value) {
+
+	        if (count == capacity) {
+	            System.out.println("Deque is full");
+	            return;
+	        }
+
+	        if (count == 0) {
+	            front = 0;
+	            rear = 0;
+	        } else {
+	            rear = (rear + 1) % capacity;
+	        }
+
+	        arr[rear] = value;
+	        count++;
+	    }
+
+	    // Insert at front
+	    void insertFront(int value) {
+
+	        if (count == capacity) {
+	            System.out.println("Deque is full");
+	            return;
+	        }
+
+	        if (count == 0) {
+	            front = 0;
+	            rear = 0;
+	        }
+	        else {
+	            front = (front - 1 + capacity) % capacity;
+	        }
+
+	        arr[front] = value;
+	        count++;
+	    }
+
+	    // Delete from front
+	    int deleteFront() {
+
+	        if (count == 0) {
+	            System.out.println("Deque is empty");
+	            return -1;
+	        }
+
+	        int value = arr[front];
+
+	        if (count == 1) {
+	            front = -1;
+	            rear = -1;
+	        } else {
+	            front = (front + 1) % capacity;
+	        }
+
+	        count--;
+	        return value;
+	    }
+
+	    // Delete from rear
+	    int deleteRear() {
+
+	        if (count == 0) {
+	            System.out.println("Deque is empty");
+	            return -1;
+	        }
+
+	        int value = arr[rear];
+
+	        if (count == 1) {
+	            front = -1;
+	            rear = -1;
+	        } else {
+	            rear = (rear - 1 + capacity) % capacity;
+	        }
+
+	        count--;
+	        return value;
+	    }
+
+	    // Display
+	    void display() {
+
+	        if (count == 0) {
+	            System.out.println("Deque is empty");
+	            return;
+	        }
+
+	        System.out.print("Deque elements: ");
+
+	        for (int i = 0; i < count; i++) {
+	            int index = (front+ i) % capacity;
+	            System.out.print(arr[index] + " ");
+	        }
+
+	        System.out.println();
+	    }
+	    
+	    public static void main(String[] args) {
+			x07_ImplementDequeue dequeue = new x07_ImplementDequeue(5);
+			dequeue.insertRear(1);
+			dequeue.insertRear(2);
+			dequeue.insertRear(3);
+			dequeue.display();
+			dequeue.insertFront(4);
+			dequeue.insertFront(5);
+			dequeue.display();
+			
+		}
+	}
+

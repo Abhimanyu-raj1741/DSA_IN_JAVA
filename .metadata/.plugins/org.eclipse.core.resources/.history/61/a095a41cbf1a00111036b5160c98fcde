@@ -1,0 +1,28 @@
+package com.practice;
+
+import java.util.Stack;
+
+public class PracticeBeast { 
+
+		public static String removeOuterParenth(String str) {
+	       StringBuilder sb = new StringBuilder();
+	       int opened=0;
+	       for(Character c : str.toCharArray()) {
+	    	     if(c=='(' &&  opened++>0  )sb.append(c);
+	    	     if(c==')' && opened-->1 )sb.append(c);
+	    	     
+	       }
+	       
+	       return sb.toString();
+	       
+	   }
+          
+	public static void main(String[] args) {
+		
+		    String str = "(()))";
+		    
+		    System.out.println(removeOuterParenth(str));
+	}
+		 
+
+}

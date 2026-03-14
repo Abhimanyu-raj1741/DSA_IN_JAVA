@@ -1,0 +1,27 @@
+package x11_Striver_Arrays;
+
+import java.util.Arrays;
+
+public class x05_LeftRotateArrayByOnePlace {
+	
+	public static void main(String[] args) {
+//		Input: nums = [1, 2, 3, 4, 5]
+//
+//				Output: [2, 3, 4, 5, 1]
+		
+		int[] arr = {1,2,3,4,5};
+		
+		int x = arr[0];
+		int index=0;
+		for(int i=1;i<arr.length;i++) {
+			arr[index]=arr[i];
+			index++;
+		}
+		arr[arr.length-1]=x;
+		
+		System.out.println(Arrays.toString(arr));
+		
+	}
+
+
+}

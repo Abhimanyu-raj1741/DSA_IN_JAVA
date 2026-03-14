@@ -1,0 +1,29 @@
+package x01_String_Easy;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class x02_ReverseWordAndString {
+	
+	public static void main(String[] args) {
+		
+		
+//		
+//		Input: s = "the sky is blue"
+//				Output: "blue is sky the"
+		
+		String str = "the sky is blue";
+		
+		List<String> s = Arrays.asList(str.split(" "));
+		
+	    Collections.reverse(s);
+	    
+	     String ans  =  s.stream().collect(Collectors.joining(" "));
+		
+		System.out.println(ans);
+		
+	}
+
+}

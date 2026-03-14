@@ -1,0 +1,40 @@
+package x01_String_Easy;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class x04_LongestCommonPrefix {
+	
+	public static void main(String[] args) {
+//		    Example 1:
+//			Input: strs = ["flower","flow","flight"]
+//			Output: "fl"
+//			Example 2:
+//			Input: strs = ["dog","racecar","car"]
+//			Output: ""
+		
+		List<String> ls = Arrays.asList("flower","flow","flight");
+		
+		Collections.sort(ls);
+		
+		String first = ls.get(0);
+		String last= ls.get(ls.size()-1);
+		int index =0 ;
+		StringBuilder sb = new StringBuilder();
+		while(index<first.length()) {
+			  if(first.charAt(index)==last.charAt(index)) {
+				  index++;
+			  }
+			  else {
+				  break;
+			  }
+			
+		}
+		if(index!=0)sb.append(first.substring(0,index));
+		
+		System.out.println(sb);
+		
+	}
+
+}

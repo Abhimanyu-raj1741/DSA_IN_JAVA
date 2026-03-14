@@ -1,0 +1,9 @@
+package x11_Striver_Arrays;
+
+public class test {
+	
+	public static void main(String[] args) {
+		System.out.print("Hi,Welcome to Striver Array Questions");
+	}
+
+}
