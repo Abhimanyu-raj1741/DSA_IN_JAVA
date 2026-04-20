@@ -10,7 +10,7 @@ public class x18_FindIndexAndLengthOfMostRepeatingCharacter {
 		  int maxLen =0;
 		
 		  int start=0;
-		  
+		  int end =0;
 		  int current=0;
 		   for(int i=1;i<str.length();i++) { 
 			     
@@ -25,10 +25,11 @@ public class x18_FindIndexAndLengthOfMostRepeatingCharacter {
 			     if(count>maxLen) {
 			    	  maxLen =count ;
 			    	  start =current; 
-			    	  
+			    	  end =i;
 			     }
 		   }
-		   System.out.println(start  + "  "+ maxLen);
+		   System.out.println(start  + "  "+ end);
+		   System.out.println(str.substring(start,end+1));
 	}
 
 }

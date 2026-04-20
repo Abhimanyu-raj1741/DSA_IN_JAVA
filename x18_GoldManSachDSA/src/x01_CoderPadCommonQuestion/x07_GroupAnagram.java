@@ -2,6 +2,7 @@ package x01_CoderPadCommonQuestion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,6 +28,8 @@ public class x07_GroupAnagram {
 
             hp.get(key).add(temp);
 		}
+		Collection<List<String>> values = hp.values();
+		
 		System.out.println(hp.values());
 	}
 

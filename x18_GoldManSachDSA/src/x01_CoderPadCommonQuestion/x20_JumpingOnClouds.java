@@ -4,7 +4,7 @@ public class x20_JumpingOnClouds {
 	
 	public static void main(String[] args) {
 		  
-		int[] input = {0,1,0,0,01,0};
+		int[] input = {0,1,0,0,0,1,0};
 	     
 		 int jump=0;
 		 int n =input.length;

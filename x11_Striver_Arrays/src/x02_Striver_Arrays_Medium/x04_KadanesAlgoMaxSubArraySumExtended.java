@@ -16,7 +16,7 @@ public class x04_KadanesAlgoMaxSubArraySumExtended {
 				 int sum=0;
 				 int ansFirst =-1;
 				 int ansEnd =-1;
-				 int start=-1;
+				 int start=0;
 				 for(int i =0; i<n;i++) {
 					 if(sum==0) {
 						 start=i;
@@ -37,7 +37,7 @@ public class x04_KadanesAlgoMaxSubArraySumExtended {
 				 }
 				 
 				 System.out.println(maxSum);
-				 for(int i=ansFirst;i<ansEnd;i++) {
+				 for(int i=ansFirst;i<=ansEnd;i++) {
 					 System.out.print(arr[i]);
 				 }
 	}

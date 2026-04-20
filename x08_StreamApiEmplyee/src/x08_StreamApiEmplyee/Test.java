@@ -107,6 +107,14 @@ public class Test {
 				System.out.println(e);
 			}
 			
+			// Using reduce find all sal sum
+			Optional<Double> reduce = employeeList.stream().map(Employee::getSalary)
+			.reduce(Double::min);
+			
+			System.out.println(reduce );
+			
+			// get the details of highest paid employee 
+			
 			 
 		 }
 		

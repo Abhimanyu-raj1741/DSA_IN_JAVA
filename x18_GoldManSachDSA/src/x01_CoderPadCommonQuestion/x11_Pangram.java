@@ -21,6 +21,7 @@ public class x11_Pangram {
 				  st.add(c);
 			 }
 		}
+		System.out.println(st);
 		if(st.size()==26) {
 			System.out.println("String is Panagram");
 			return ;
@@ -40,7 +41,7 @@ public class x11_Pangram {
 	}
 	
 	public static void main(String[] args) {
-		         String str = "thequickbrownjumpsoverthelazydog";
+		         String str = "thequickbrownfox jumpsoverthelazydog";
 		         
 		         checkPangram(str);
 		         

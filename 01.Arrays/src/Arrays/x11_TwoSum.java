@@ -31,12 +31,13 @@ public class x11_TwoSum {
 		  for(int i =0 ; i<n;i++) {
 			  
 			  int require = target - arr[i];
-			  if(!hm.containsKey(require)) {
-				  hm.put(arr[i],i);
-			  }
-			  else {
+			  if(hm.containsKey(require)) {
 				  a=hm.get(require);
 				  b=i;
+			  }
+			  else {
+				  
+				  hm.put(arr[i],i);
 			  }
 			  
 		  }

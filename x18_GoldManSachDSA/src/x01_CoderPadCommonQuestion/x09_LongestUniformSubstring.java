@@ -5,20 +5,23 @@ public class x09_LongestUniformSubstring {
 	public static void main(String[] args) {
 		// TC: O(n)
 
-		        String s = "aabbcccccccc";
+		        String s = "abcdefghijkllllllll";
 		        int[] result = findLongestSegment(s);
-		        int start =result[0];
-		        int end = result[1];
-		        for(int i =start;i<end;i++) {
-		        	   System.out.print(s.charAt(i));
+		        if(s.length()>=1) {
+		        	 int start =result[0];
+				        int end = result[1];
+				        for(int i =start;i<=end;i++) {
+				        	   System.out.print(s.charAt(i));
+				        }
 		        }
+		       
 		        
 		        System.out.println("[" + result[0] + ", " + result[1] + "]");
 		}
 	
 	public static int[] findLongestSegment(String s) {
 		int n = s.length();
-		if(n==0) return new int[] {-1,0};
+		if(n==0 || s.isEmpty()) return new int[] {-1,0};
 		
 		int start =0;
 		int end=0 ;

@@ -20,6 +20,10 @@ public class x21_DiscardLastCharacterWithDigit {
 				  st.add(c);
 			  }
 		 }
-		 System.out.println(st);
+		 StringBuilder sb = new StringBuilder();
+		 while(!st.isEmpty()) {
+			 sb.append(st.pop());
+		 }
+		 System.out.println(sb.reverse());
 	}
 }

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -19,6 +20,7 @@ public class Java8PracticeforAccenture {
 		
 		Map<Boolean,List<Integer>> ans =   ls.stream().collect(Collectors.partitioningBy(i->i%2==0));
 		 
+		ans.forEach((k,v)-> System.out.println(k +  " " + v));
 	
 
 		for(Map.Entry<Boolean,List<Integer>> mp : ans.entrySet()) {
@@ -159,6 +161,31 @@ public class Java8PracticeforAccenture {
 	        List<Integer> myList = Arrays.asList(10,23,101,504,156,569,211,1001);
 	        
 	        myList.stream().map(String::valueOf).filter(s->s.startsWith("1")).map(Integer::valueOf).forEach(System.out::println);
+	        
+	        String s3 = "This is Abhimanyu";
+	        String collect2 = Arrays.stream(s3.split(" ")).map(word->new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
+	        
+	        System.out.println(collect2);
+	        
+	        // Reverse String 
+	         s3.chars().mapToObj(x->String.valueOf((char)x))
+	        		 .reduce("",(y,z)->z + y);
+	         
+	        List<String> ls2 = Arrays.asList("Abhi","Rohan","Tom","Abhimanyu");
+	        
+	        Optional<String> reduce = ls2.stream().reduce((r,d)->r.length()>d.length()?r:d);
+	        
+	        System.out.println(reduce.get());
+	        
+	        String[] arr = { "Geeks", "for", "Geeks" };
+	        
+	        Optional<String> reduce2 = Arrays.stream(arr).reduce((f,e)->f+ "-"+ e);
+	        
+	        System.out.println(reduce2.get());
+	        
+	        
+	        
+	        
 	        
 	        
 	}

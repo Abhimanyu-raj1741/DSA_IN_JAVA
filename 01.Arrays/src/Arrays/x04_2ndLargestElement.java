@@ -39,7 +39,7 @@ public class x04_2ndLargestElement {
 		 }
 		 
 		System.out.println(secLarge);
-		int[] arr = {2,4,7,7,5,8,8,9,9,9};
+		int[] arr = {2,4,7,7,5,8,8,9,9,9,11};
 		
 		// Optimal Approach
 		 int secLarg =-1;
@@ -53,7 +53,7 @@ public class x04_2ndLargestElement {
 	    	     }
 	    	    	  
 	    	     
-	    	     else if(arr[i]>larg && arr[i]>secLarg) {
+	    	     else if(arr[i]<larg && arr[i]>secLarg) {
 	    	    	      secLarg =arr[i];
 	    	     }
 	     }

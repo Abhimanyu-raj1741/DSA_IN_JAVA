@@ -20,30 +20,33 @@ public class x20_MaximumSubArraySumKadane {
 		System.out.println(maxSum);
 		
 		// Optimal Kadane's Algorithm O(n) 
-		int max=Integer.MIN_VALUE;
-		int sum=0;
-		int start =0;
-		int end=0;
-		for(int i=0;i<arr.length;i++) {
-			if(sum==0)start=i;
-			
-			sum+=arr[i];
-			
-			if(sum>max) {
-				
-				max = Math.max(sum,max);
-				end=i;
-			}
-			if(sum<0)
-			{
-				sum=0;
-				
-			}
-				
+		int max = Integer.MIN_VALUE;
+		int sum = 0;
+
+		int start = 0;
+		int end = 0;
+		int tempStart = 0;
+
+		for(int i = 0; i < arr.length; i++) {
+
+		    sum += arr[i];
+
+		    if(sum > max) {
+		        max = sum;
+		        start = tempStart;
+		        end = i;
+		    }
+
+		    if(sum < 0) {
+		        sum = 0;
+		        tempStart = i + 1;
+		    }
 		}
-		System.out.println(max);
-		for(int i=start;i<end;i++) {
-			System.out.print(arr[i]+ " ");
+
+		System.out.println("Max Sum: " + max);
+
+		for(int i = start; i <= end; i++) {
+		    System.out.print(arr[i] + " ");
 		}
 	}
 

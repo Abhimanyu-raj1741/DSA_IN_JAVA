@@ -1,5 +1,7 @@
 package x01_CoderPadCommonQuestion;
 
+import java.util.Arrays;
+
 public class x05_TrappintRainWater {
 	
 	
@@ -39,7 +41,7 @@ public class x05_TrappintRainWater {
 		for(int i=1;i<n ;i++) {
 			 prefixMax[i] = Math.max(prefixMax[i-1], height[i]);
 		}
-		 
+		// System.out.println(Arrays.toString(prefixMax));
 		suffixMax[n-1]=height[n-1];
 		for(int i=n-2;i>=0;i--) {
 			suffixMax[i] =Math.max(suffixMax[i+1], height[i]);

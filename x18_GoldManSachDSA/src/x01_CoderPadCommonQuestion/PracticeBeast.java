@@ -1,42 +1,33 @@
 package x01_CoderPadCommonQuestion;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 public class PracticeBeast { 
 
 	
 	public static void main(String[] args) {
-		  String str = "aabbbbccddddee";
-		  
-		  StringBuilder sb = new StringBuilder();
-		  
-		  char[] c =str.toCharArray();
-		  int i =1;
-		  int count =1 ;
-		  char temp=c[0];
-		   while(i<c.length) {
+		String[] str = {"eat","tea","tan","ate","nat","bat"};
+		
+		HashMap<String,List<String>> hp = new HashMap<>();
+		
+		for(int i=0;i<str.length;i++) {
+			   String temp = str[i];
 			   
-			     if(temp ==c[i]) {
-			    	  i++;
-			    	  count++;
-			     }
-			     else {
-			    	   sb.append(temp);
-			    	   sb.append(count);
-			    	   i++;
-			    	   temp=c[i];
-			    	   count =1;
-			    	   
-			     }
-			     if(i==c.length) {
-			    	     sb.append(temp);
-			    	     sb.append(count);
-			     }
-		   }
-		  System.out.println(sb.toString());
+			   char[] ch = temp.toCharArray();
+			   Arrays.sort(ch);
+			   String key = new String(ch);
+			   
+			   if(!hp.containsKey(key)) {
+				   hp.put(key, new ArrayList<>());
+			   }
+			   hp.get(key).add(temp);
+			   
+		}
+		System.out.println(hp.values());
+		
 	}
 	
 

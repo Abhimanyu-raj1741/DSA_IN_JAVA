@@ -15,6 +15,7 @@ public class x01_LinkedListImpl {
 		 
 	 }
 	Node head;
+	
 	public  void insertFirst(int data) {
 		Node newNode = new Node(data);
 	
@@ -39,57 +40,67 @@ public class x01_LinkedListImpl {
 		
 	}
 	public void insertPos(int data,int index) {
-		int i =0;
-		Node temp  =head;
-		
-		if(index==0) {
-			insertFirst(data);
-			return;
-		}
-		while(i<index-1) {
-			temp=temp.next;
-			i++;
-		}
-		System.out.println(temp.data);
-		Node curr = new Node(data);
-		Node save = temp.next;
-		curr.next=save;
-		temp.next=curr;
+		  if (index == 0) {
+		        insertFirst(data);
+		        return;
+		    }
+
+		    Node temp = head;
+		    int i = 0;
+
+		    while (temp != null && i < index - 1) {
+		        temp = temp.next;
+		        i++;
+		    }
+
+		    if (temp == null) {
+		        System.out.println("Invalid index");
+		        return;
+		    }
+
+		    Node newNode = new Node(data);
+		    newNode.next = temp.next;
+		    temp.next = newNode;
 		
 		
 	}
 	
 	public void deleteLast() {
 		
-		if( head.next==null) {
-			head=null;
-			return;
-		}
-		Node temp =head;
-		
-		while(temp.next.next!=null) {
-			temp =temp.next;
-		}
-		temp.next=null;
-	}
-	public void deleteFirst() {
-	    if(head==null)	{
-	    	System.out.println("List is empty");
-	    	return;
-	    }
-	     
-	    head =head.next;
+		   if (head == null) {
+		        System.out.println("List is empty");
+		        return;
+		    }
+
+		    if (head.next == null) {
+		        head = null;
+		        return;
+		    }
+
+		    Node temp = head;
+		    while (temp.next.next != null) {
+		        temp = temp.next;
+		    }
+
+		    temp.next = null;
       		
 	}
 	public void search(int data) {
-		int index =0;
-		Node temp  = head ;
-		while(temp.data!=data) {
-			temp=temp.next;
-			index++;
-		}
-		System.out.println("Find at Index "+ index);
+		  int index = 0;
+		    Node temp = head;
+
+		    while (temp != null) {
+		        if (temp.data == data) {
+		            System.out.println("Find at Index " + index);
+		            return;
+		        }
+		        temp = temp.next;
+		        index++;
+		    }
+
+		    System.out.println("Not Found");
 	}
+	
 	public void showNode() {
 		Node temp =head;
 		while(temp!=null) {
@@ -113,7 +124,7 @@ public class x01_LinkedListImpl {
 	  node.search(44);
 	  node.deleteLast();
 	  node.showNode();
-		node.deleteFirst();
+	//node.deleteFirst();
 		node.showNode();
 	}
 

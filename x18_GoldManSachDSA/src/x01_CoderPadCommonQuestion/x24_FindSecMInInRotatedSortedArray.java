@@ -3,7 +3,7 @@ package x01_CoderPadCommonQuestion;
 public class x24_FindSecMInInRotatedSortedArray { 
 	
 	public static void main(String[] args) {
-		  int[] arr = {5,6,2,3,4};
+		  int[] arr = {6,7, 8 ,1 ,2, 4, 5};
 		  
 		  int secondMin = findSecondMin(arr);
 		  System.out.println(secondMin);
@@ -27,9 +27,10 @@ public class x24_FindSecMInInRotatedSortedArray {
 		   int high = arr.length-1;
 		  while(low<high) {
 			    int mid  = low+(high-low)/2;
-			    if(arr[mid]>arr[high]) {
+			    if(arr[mid]>arr[high]) {  // 4321
 			    	    low=mid+1;
 			    }
+			    // 6 7 8 1 2 4 5
 			    else {
 			    	    high=mid;
 			    }

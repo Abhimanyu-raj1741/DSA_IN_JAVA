@@ -7,10 +7,22 @@
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="x01_Learning.x01_ImplementStackUsingArray"/>
-    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="x01_Learning.x02_ImplementQueueUsingArrays"/>
     <fullyQualifiedTypeName name="x01_Learning.x07_ImplementDequeue"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="MultiThreadingBasics.x01_ThreadExample"/>
+    <fullyQualifiedTypeName name="MultiThreadingBasics.x03_TheadExampleExtendsThread"/>
+    <fullyQualifiedTypeName name="MultiThreadingBasics.x04_ThreadImplRunnable"/>
+    <fullyQualifiedTypeName name="MultiThreadingBasics.x07_SalaryCalcualtion"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+    <fullyQualifiedTypeName name="Synchronization.BankOfAmerica"/>
+    <fullyQualifiedTypeName name="MultiThreadingMedium.x01_ThreadCallable"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+    <fullyQualifiedTypeName name="java.time.Duration"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.time.Period"/>
+    <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
 </qualifiedTypeNameHistroy>
